@@ -25,6 +25,7 @@ const Products = () => {
 
     fetchData();
   }, []);
+  
 
   const filterProduct = (category) => {
     const updatedItems = data.filter((item) => item.category === category);
@@ -35,7 +36,7 @@ const Products = () => {
     return (
       <div>
         <div className="buttons">
-          <button onClick={() => setFilter(data)} className="border-solid border-2 text-3xl text-black ps-8 pe-8 bg-indigo-400 border-black m-10 p-1 rounded-md">All Brands</button>
+          <button onClick={() => setFilter(data)} className="border-solid border-2 text-3xl text-black ps-8 pe-8 bg-indigo-400 border-black m-10 p-1 rounded-md">All</button>
           <button onClick={() => filterProduct("men's clothing")} className="border-solid border-2 bg-indigo-400 ps-8 pe-8 text-3xl border-black text-black m-10 p-1 rounded-md">Men</button>
           <button onClick={() => filterProduct("women's clothing")} className="border-solid border-2 bg-indigo-400 text-3xl ps-8 pe-8 border-black text-black m-10 p-1 rounded-md">Women</button>
           <button onClick={() => filterProduct("jewelery")} className="border-solid border-2 bg-indigo-400 text-3xl text-black ps-8 pe-8 border-black m-10 p-1 rounded-md">Jewellery</button>

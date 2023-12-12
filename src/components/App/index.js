@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 import Products from '../Products';
 import Product from '../Product';
 import PageNotFound from '../PageNotFound';
+import Login from '../Login';
+
 //import Search from "../Search"
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/products' element={<Products />}></Route>
         <Route path='/products/:id' element={<Product />}></Route>
+        <Route path='/login' element={<Login />}></Route>
         <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
      
@@ -24,3 +27,4 @@ function App() {
 }
 
 export default App;
+
