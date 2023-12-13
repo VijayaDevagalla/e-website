@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loginStatus, setLoginStatus] = useState(null)
 
   const handleLogin = async () => {
     try {
@@ -21,9 +22,10 @@ const Login = () => {
 
       const userData = await response.json();
       console.log('Login successful:', userData);
-    
+      setLoginStatus(true);
     } catch (error) {
       console.error('Error during login:', error);
+      setLoginStatus(false);
     }
   };
   return (
@@ -56,6 +58,11 @@ const Login = () => {
       Login
     </button>
   </form>
+  {loginStatus !== null && (
+        <p className={loginStatus ? 'text-green-600' : 'text-red-600'}>
+          {loginStatus ? 'Login successful!' : 'Login failed. Please check your credentials.'}
+        </p>
+      )}
 </div>
   );
 };
